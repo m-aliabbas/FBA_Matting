@@ -17,8 +17,6 @@ def build_model(args):
 
     model = MattingModule(net_encoder, net_decoder)
 
-    model.cuda()
-
     if(args.weights != 'default'):
         sd = torch.load(args.weights)
         model.load_state_dict(sd, strict=True)
